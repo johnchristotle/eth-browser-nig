@@ -7,7 +7,7 @@ function AppDashboard() {
   return (
     <div>
       <Header as="h2" block>
-        ETH BROWSER NIG
+        ETH BROWSER NIG -Smart Ethereum Block Explorer
       </Header>
     </div>
   );

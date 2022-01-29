@@ -64,12 +64,12 @@ class LatestTxs extends Component {
           <Table.Header>
             <Table.Row>
               <Table.Cell style={{ color:"#066827" }}>
-                <h4> Latest Transactions</h4>
+                <h4>Latest Transactions</h4>
               </Table.Cell>
             </Table.Row>
           </Table.Header>
-
-          <Table.Body>{this.state.transactions}</Table.Body>
+          <Table.Body>{this.state.transactions}
+          </Table.Body>
         </Table>
       </div>
     );

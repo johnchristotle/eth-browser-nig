@@ -1,15 +1,14 @@
-# ETH BROWSER NIG: Semi-Etherscan Clone 
+# ETH BROWSER NIG -Smart Ethereum Block Explorer 
 with React, Semantic UI, Node.js  
 
 
 # Dependancies:
-Axios, Web3, Ether.js, Etherscan API
+Axios, Web3, Etherscan API
 
 This is a semi-etherscan browser with a simple dashboard that displays lives stats of the Etherium Network. Price, Block, Number of Transactions, Miner, Difficulty and Market Cap.
 
 It has a table populated with all transaction sorted by amount.
 
-and also contains a search bar to browse by target.
 
 
 ### `npm start`
