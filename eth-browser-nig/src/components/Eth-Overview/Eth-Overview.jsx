@@ -6,7 +6,7 @@ import LatestBlocks from "../Latest-Blocks/index";
 import LatestTxs from "../Latest-Txs/index";
 
 // import api key from the env variable
-const apiKey = process.env;
+const apiKey = process.env.REACT_APP_ETHERSCAN_API_KEY;
 
 const endpoint = `https://api.etherscan.io/api`;
 
@@ -102,7 +102,7 @@ class EthOverview extends Component {
             <Grid.Column width={4}>
               <Card>
                 <Card.Content>
-                  <Card.Header style={{ color: "#1d6fa5" }}>
+                  <Card.Header style={{ color: "#066827" }}>
                     <Icon name="ethereum"></Icon> ETHER PRICE
                   </Card.Header>
                   <Card.Description textAlign="left">
@@ -116,7 +116,7 @@ class EthOverview extends Component {
             <Grid.Column width={4}>
               <Card>
                 <Card.Content>
-                  <Card.Header style={{ color: "#1d6fa5" }}>
+                  <Card.Header style={{ color: "#066827" }}>
                     <Icon name="list alternate outline"></Icon> LATEST BLOCK
                   </Card.Header>
                   <Card.Description textAlign="left">
@@ -128,7 +128,7 @@ class EthOverview extends Component {
             <Grid.Column width={4}>
               <Card>
                 <Card.Content>
-                  <Card.Header style={{ color: "#1d6fa5" }}>
+                  <Card.Header style={{ color:"#066827" }}>
                     <Icon name="setting"></Icon> DIFFICULTY
                   </Card.Header>
                   <Card.Description textAlign="left">
@@ -140,7 +140,7 @@ class EthOverview extends Component {
             <Grid.Column width={4}>
               <Card>
                 <Card.Content>
-                  <Card.Header style={{ color: "#1d6fa5" }}>
+                  <Card.Header style={{ color:"#066827" }}>
                     <Icon name="world"></Icon> MARKET CAP
                   </Card.Header>
                   <Card.Description textAlign="left">

@@ -1,15 +1,17 @@
 import React, { Component } from "react";
-import { Table, Label } from "semantic-ui-react";
-
-import axios from "axios";
-
-const apiKey = process.env;
-const endpoint = `https://api.etherscan.io/api`;
+import {
+  Table,
+  TableRow,
+  TableHeader,
+  TableBody,
+  TableCell
+} from "semantic-ui-react";
 
 class LatestBlocks extends Component {
   constructor(props) {
+    super(props);
     this.state = {
-      blocks: [],
+      blocks: []
     };
   }
 
@@ -17,57 +19,36 @@ class LatestBlocks extends Component {
     this.getBlocks();
   };
 
-  getBlocks = async () => {
-    const { latestBlock } = this.props;
+  getBlocks = () => {
+    const { lastBlocks } = this.props;
+    console.log(lastBlocks);
+    const blockDetails = lastBlocks.map((block, index) => (
+      <TableRow key={index}>
+        <TableCell>Bk {block.blockNo}</TableCell>
+        <TableCell>
+          Miner {block.miner} <br></br>
+          Txs {block.totalTxs}
+        </TableCell>
+        {/* <TableCell> Eth {parseInt(block.value) / 10 ** 18}</TableCell> */}
+      </TableRow>
+    ));
 
-    let blocks = [];
-
-    // check if latest blocks
-    if (latestBlock) {
-      for (let i = 0; i < 2; i = i + 1) {
-        // get the block transaction
-        const blockDetail = await axios.get(
-          endpoint +
-            `?module=proxy&action=eth_getBlockByNumber&tag=${(
-              latestBlock - i
-            ).toString(16)}&boolean=true&apikey=${apiKey}`
-        );
-
-        const { result } = blockDetail.data;
-        blocks.push(
-          <Table.Row key={i}>
-            <Table.Cell>
-              <Label color="blue">Bk</Label> {latestBlock - i}
-            </Table.Cell>
-            <Table.Cell>
-              Miner {result.miner} <br></br>
-              Txs {result.transactions.length}
-            </Table.Cell>
-            <Table.Cell>
-              <Label color="blue">Size </Label> {parseInt(result.size)} bytes
-            </Table.Cell>
-          </Table.Row>
-        );
-
-        this.setState({
-          blocks: blocks,
-        });
-      }
-    }
+    this.setState({
+      blocks: blockDetails
+    });
   };
-
   render() {
     return (
       <Table fixed>
-        <Table.Header>
-          <Table.Row>
-            <Table.Cell style={{ color: "#1d6fa5" }}>
-              <h4>Latest Blocks</h4>
-            </Table.Cell>
-          </Table.Row>
-        </Table.Header>
+        <TableHeader>
+          <TableRow>
+            <TableCell as="h3" style={{ padding: "10px" }}>
+              Latest Blocks
+            </TableCell>
+          </TableRow>
+        </TableHeader>
 
-        <Table.Body>{this.state.blocks}</Table.Body>
+        <TableBody>{this.state.blocks}</TableBody>
       </Table>
     );
   }

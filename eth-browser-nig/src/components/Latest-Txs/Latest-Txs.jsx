@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Table, Label } from "semantic-ui-react";
 import axios from "axios";
 
-const apiKey = process.env;
+const apiKey = process.env.REACT_APP_ETHERSCAN_API_KEY;
 const endpoint = `https://api.etherscan.io/api`;
 
 class LatestTxs extends Component {
@@ -37,7 +37,7 @@ class LatestTxs extends Component {
         txsDetails.push(
           <Table.Row key={i}>
             <Table.Cell>
-              <Label color="blue">Tx</Label> {tx.hash}
+              <Label color="#066827">Tx</Label> {tx.hash}
             </Table.Cell>
             <Table.Cell>
               From {tx.from} <br></br>
@@ -45,7 +45,7 @@ class LatestTxs extends Component {
             </Table.Cell>
             <Table.Cell>
               {" "}
-              <Label color="blue">Eth</Label> {parseInt(tx.value) / 10 ** 18}
+              <Label color="#066827">Eth</Label> {parseInt(tx.value) / 10 ** 18}
             </Table.Cell>
           </Table.Row>
         );
@@ -63,7 +63,7 @@ class LatestTxs extends Component {
         <Table fixed>
           <Table.Header>
             <Table.Row>
-              <Table.Cell style={{ color: "#1d6fa5" }}>
+              <Table.Cell style={{ color:"#066827" }}>
                 <h4> Latest Transactions</h4>
               </Table.Cell>
             </Table.Row>
