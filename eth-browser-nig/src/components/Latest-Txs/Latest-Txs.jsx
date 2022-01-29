@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Table, Label } from "semantic-ui-react";
+import { Table, Label, } from "semantic-ui-react";
 import axios from "axios";
 
 const apiKey = process.env.REACT_APP_ETHERSCAN_API_KEY;
