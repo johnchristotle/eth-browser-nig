@@ -154,8 +154,8 @@ class EthOverview extends Component {
 
         <Grid divided="vertically">
           <Grid.Row columns={2}>
-            <Grid.Column>{this.getLatestBlocks()}</Grid.Column>
             <Grid.Column>{this.getLatestTxs()}</Grid.Column>
+            <Grid.Column>{this.getLatestBlocks()}</Grid.Column>
           </Grid.Row>
         </Grid>
       </div>
