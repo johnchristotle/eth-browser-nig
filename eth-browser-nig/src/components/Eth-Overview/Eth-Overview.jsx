@@ -77,8 +77,7 @@ class EthOverview extends Component {
     )} TH`;
 
     this.setState({
-      difficulty: difficultyTH,
-    });
+      difficulty: difficultyTH });
   }
 
   getLatestBlocks = () => {
